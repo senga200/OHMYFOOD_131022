@@ -1,0 +1,44 @@
+header{
+    text-align: center;
+
+}
+
+h1 {
+    @include h1;
+}
+
+h2{
+    margin-left: 10%;
+    padding-top: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+    //color: $color-primary-text;
+}
+
+
+
+.localisation{
+    margin-top: -1rem;
+    @include flex-center;
+    background-color:darken($color: $color-background, $amount: 10%);
+    i{
+        padding-right: 1rem;
+    }
+}
+
+.intro{
+    display: grid;
+    text-align: center;
+    padding: 5% 0 15% 0;
+    background-color: $color-background-secondary;
+    h2{
+        margin:0;
+    }
+}
+
+.intro__soustitre{
+    @include p;
+    padding-bottom: 10%;
+}

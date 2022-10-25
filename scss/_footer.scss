@@ -1,0 +1,18 @@
+footer{
+    background-color: #353535;
+    padding: 2rem;
+    a{
+        color: $color-secondary-text;
+    }
+    i{
+        padding-right: 0.5rem;
+    }
+}
+
+
+.footer__titre {
+     font-family: "Shrikhand";
+     color: $color-secondary-text;
+     font-size: 20px;
+     padding-bottom: 0.5rem;
+}

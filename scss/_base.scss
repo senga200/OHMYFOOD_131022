@@ -1,0 +1,231 @@
+//@import "./mixins" ;
+//@import "./variables" ;
+
+body{
+    font-family: "Roboto";
+}
+
+/**************HEADER = _header.scss**************/
+
+
+.fonctionnement {
+   @include flex-center;
+    margin-right:3.5rem;
+    counter-reset : steps;
+
+}
+
+.etape {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: $color-background-secondary;
+    margin: auto 0.5rem 1.5rem auto;
+    width: 100%;
+    position: relative;
+    &:hover{
+        background-color: lighten($color-primary, $amount: 35%) ;
+    }
+}
+
+.etape span{
+    :hover{
+            color:$color-primary;
+       }
+}
+
+.etape::before{
+    @include flex-center;
+    position: absolute;
+    content: ""counter(steps);
+    counter-increment: steps;
+    height: 25px;
+    width: 25px;
+    left: -1rem;
+    transition: all 0.3s;
+    border-radius:50%;
+    background : $color-primary;
+}
+
+.card{
+    background-color: $color-background-secondary;
+    padding-bottom: 3rem;
+}
+.card__resto{
+    @include flex-center;
+    flex-direction: column;
+
+    .new{
+        position: relative;
+    }
+    .new::before{
+        content:"Nouveau";
+        position: absolute;
+        height: 2rem;
+        width: 5rem;
+        border-radius:5px;
+        background-color:$color-tertiary;
+        color: darken($color-tertiary,40%);
+        font-size: 14px;
+        font-weight: bold;
+        @include flex-center;
+        right: 1rem;
+        top: 1rem;
+    }
+}
+
+.card__resto--paletteDuGout,
+.card__resto--noteEnchantee,
+.card__resto--alaFrancaise,
+.card__resto--deliceDesSens {
+    @include box-shadow;
+    @include p;
+    @include card-resto;
+    margin-bottom: 1.5rem;
+}
+
+.card__resto {
+     :hover{
+    background-color: lighten($color-primary, $amount: 35%) ;;
+     transition: all 0.3s ease;
+    }
+}
+
+// .card__resto--paletteDuGout,
+// .card__resto--noteEnchantee,
+// .card__resto--alaFrancaise,
+//.card__resto--deliceDesSens{
+
+
+
+
+.card__lieu {
+    margin: -1rem 3rem -1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    @include coeur;
+}
+
+
+
+
+/*********PAGE RESTO***************/
+
+
+.restoImg {
+    padding-top: -1rem;
+    box-sizing: content-box;
+    background-size: cover;
+    background-position: center;
+    img{
+       width:100%;
+    }
+}
+
+.flecheRetour {
+    font-size: 1.5rem;
+    position: absolute;
+    left: 3rem;
+    top: 2.3rem;
+}
+
+ h6, .carte, .carte__menus{
+    animation: montee 2S 1s ease-in-out backwards;
+}
+
+.carte {
+    background-color:$color-background-secondary;
+    border-radius: 30px 30px 0 0 ;
+    padding: 0.1rem 1rem 0 1rem;
+    position: relative;
+    top: -3.5rem;
+}
+
+.carte__titre {
+    @include h5;
+    @include coeur;
+    span{
+    position: absolute;
+    right: 4rem;
+    top: 2.5rem;
+    }
+}
+
+h6{
+    @include h6;
+}
+
+.carte__menus{
+    display: grid;
+    grid-template-columns: 1fr ;/*@media repeat(3, 1fr) ; (max-width : variable.$breakpoint)*/
+    gap: 1rem;
+   animation : montee 2s ease-in-out backwards;
+   overflow: hidden;
+}
+
+
+.carte__item1 {
+    display: flex;
+    height: auto;
+    width: auto;
+    padding: 1rem;
+    border-radius:1rem;
+    cursor:pointer;
+    background-color:$color-background;
+    animation: montee 3s;
+    overflow: hidden;
+     &:hover{
+        @include rotation ;
+    }
+}
+
+.titres, .description1, .detail {
+    margin: 0;
+   height: auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+   flex: 2;
+}
+
+.prix{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-weight: bold;
+}
+
+.confirmation {
+    @include flex-center;
+    background-color: $color-tertiary;
+    color:white;
+    width: 4rem;
+    margin: -1rem -5rem -1rem 1rem;
+    transition: all 0.7s ease;
+}
+
+.carte__item1:hover .confirmation {
+    margin-right: -1rem;
+}
+
+.icone{
+    @include flex-center;
+    width:auto;
+    border-radius: 5rem;
+    transition: all 0.7s ease;
+    i{
+    transition : 1s;
+    }
+}
+
+
+
+// $color-primary:#9356DC ;
+// $color-secondary:#FF79DA ; 
+// $color-tertiary:#99E2D0 ; 
+// $color-gradient : linear-gradient(($color-secondary),($color-primary));
+// $color-background : white;
+// $color-background-footer : #353535;
+// $color-primary-text : black;
+// $color-secondary-text : white;
+// $color-background-secondary : #f1f1f1;

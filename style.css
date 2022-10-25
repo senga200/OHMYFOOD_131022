@@ -1,0 +1,385 @@
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
+body {
+  font-family: "Roboto";
+}
+
+/**************HEADER = _header.scss**************/
+.fonctionnement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 3.5rem;
+  counter-reset: steps;
+}
+
+.etape {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #f1f1f1;
+  margin: auto 0.5rem 1.5rem auto;
+  width: 100%;
+  position: relative;
+}
+.etape:hover {
+  background-color: #f2eafb;
+}
+
+.etape span :hover {
+  color: #9356DC;
+}
+
+.etape::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  content: "" counter(steps);
+  counter-increment: steps;
+  height: 25px;
+  width: 25px;
+  left: -1rem;
+  transition: all 0.3s;
+  border-radius: 50%;
+  background: #9356DC;
+}
+
+.card {
+  background-color: #f1f1f1;
+  padding-bottom: 3rem;
+}
+
+.card__resto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.card__resto .new {
+  position: relative;
+}
+.card__resto .new::before {
+  content: "Nouveau";
+  position: absolute;
+  height: 2rem;
+  width: 5rem;
+  border-radius: 5px;
+  background-color: #99E2D0;
+  color: #278870;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 1rem;
+  top: 1rem;
+}
+
+.card__resto--paletteDuGout,
+.card__resto--noteEnchantee,
+.card__resto--alaFrancaise,
+.card__resto--deliceDesSens {
+  box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.48);
+  font-weight: lighter;
+  font-size: 18px;
+  width: 80%;
+  height: 15rem;
+  border-radius: 10%;
+  line-height: 20%;
+  margin-bottom: 1.5rem;
+}
+.card__resto--paletteDuGout p, .card__resto--paletteDuGout h3,
+.card__resto--noteEnchantee p,
+.card__resto--noteEnchantee h3,
+.card__resto--alaFrancaise p,
+.card__resto--alaFrancaise h3,
+.card__resto--deliceDesSens p,
+.card__resto--deliceDesSens h3 {
+  padding-left: 10px;
+}
+.card__resto--paletteDuGout img,
+.card__resto--noteEnchantee img,
+.card__resto--alaFrancaise img,
+.card__resto--deliceDesSens img {
+  box-sizing: content-box;
+  width: 100%;
+  height: 10rem;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover;
+  text-align: center;
+}
+
+.card__resto :hover {
+  background-color: #f2eafb;
+  transition: all 0.3s ease;
+}
+
+.card__lieu {
+  margin: -1rem 3rem -1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.card__lieu .fa-regular {
+  position: absolute;
+}
+.card__lieu .fa-solid {
+  position: absolute;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+.card__lieu .fa-solid:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+.card__lieu i {
+  color: transparent;
+  background-color: linear-gradient(#FF79DA, #9356DC);
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+}
+
+/*********PAGE RESTO***************/
+.restoImg {
+  padding-top: -1rem;
+  box-sizing: content-box;
+  background-size: cover;
+  background-position: center;
+}
+.restoImg img {
+  width: 100%;
+}
+
+.flecheRetour {
+  font-size: 1.5rem;
+  position: absolute;
+  left: 3rem;
+  top: 2.3rem;
+}
+
+h6, .carte, .carte__menus {
+  animation: montee 2S 1s ease-in-out backwards;
+}
+
+.carte {
+  background-color: #f1f1f1;
+  border-radius: 30px 30px 0 0;
+  padding: 0.1rem 1rem 0 1rem;
+  position: relative;
+  top: -3.5rem;
+}
+
+.carte__titre {
+  font-family: "Shrikhand";
+  font-size: 30px;
+}
+.carte__titre .fa-regular {
+  position: absolute;
+}
+.carte__titre .fa-solid {
+  position: absolute;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+.carte__titre .fa-solid:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+.carte__titre i {
+  color: transparent;
+  background-color: linear-gradient(#FF79DA, #9356DC);
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+}
+.carte__titre span {
+  position: absolute;
+  right: 4rem;
+  top: 2.5rem;
+}
+
+h6 {
+  font-weight: lighter;
+  font-size: 18px;
+}
+h6::after {
+  content: "";
+  display: block;
+  margin-top: 0.2rem;
+  width: 3rem;
+  height: 0.2rem;
+  background: #99E2D0;
+}
+
+.carte__menus {
+  display: grid;
+  grid-template-columns: 1fr; /*@media repeat(3, 1fr) ; (max-width : variable.$breakpoint)*/
+  gap: 1rem;
+  animation: montee 2s ease-in-out backwards;
+  overflow: hidden;
+}
+
+.carte__item1 {
+  display: flex;
+  height: auto;
+  width: auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: white;
+  animation: montee 3s;
+  overflow: hidden;
+}
+.carte__item1:hover .icone i {
+  rotate: -360deg;
+}
+
+.titres, .description1, .detail {
+  margin: 0;
+  height: auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 2;
+}
+
+.prix {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-weight: bold;
+}
+
+.confirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  color: white;
+  width: 4rem;
+  margin: -1rem -5rem -1rem 1rem;
+  transition: all 0.7s ease;
+}
+
+.carte__item1:hover .confirmation {
+  margin-right: -1rem;
+}
+
+.icone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  border-radius: 5rem;
+  transition: all 0.7s ease;
+}
+.icone i {
+  transition: 1s;
+}
+
+button {
+  padding: 15px;
+  margin: auto;
+  border: none;
+  width: 60%;
+  border-radius: 30px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 5px 13px 14px 0px rgba(0, 0, 0, 0.23);
+}
+button:hover {
+  opacity: 0.9;
+  box-shadow: 5px 13px 14px 0px rgba(0, 0, 0, 0.43);
+  transition: all 0.3s ease;
+  transform: scale(1.01);
+}
+
+li {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  padding: 10px;
+  margin: 10px;
+  height: 2.5rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.13);
+  border-radius: 1.25rem;
+  background-color: #f6f6f6;
+}
+
+footer {
+  background-color: #353535;
+  padding: 2rem;
+}
+footer a {
+  color: white;
+}
+footer i {
+  padding-right: 0.5rem;
+}
+
+.footer__titre {
+  font-family: "Shrikhand";
+  color: white;
+  font-size: 20px;
+  padding-bottom: 0.5rem;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-family: "Shrikhand";
+  padding: 1rem;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  margin-left: 10%;
+  padding-top: 2.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.localisation {
+  margin-top: -1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6e6e6;
+}
+.localisation i {
+  padding-right: 1rem;
+}
+
+.intro {
+  display: grid;
+  text-align: center;
+  padding: 5% 0 15% 0;
+  background-color: #f1f1f1;
+}
+.intro h2 {
+  margin: 0;
+}
+
+.intro__soustitre {
+  font-weight: lighter;
+  font-size: 18px;
+  padding-bottom: 10%;
+}
+
+@keyframes montee {
+  0% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
