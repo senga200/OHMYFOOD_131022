@@ -69,12 +69,12 @@
 
 //   }
 
-//   @keyframes disparition {
-//     from{opacity : 1 ;
-//     }
-//     to {opacity : 0 ;
-//     }
-//   }
+  @keyframes apparition {
+    from{opacity : 0 ;
+    }
+    to {opacity : 1 ;
+    }
+  }
 
 
 

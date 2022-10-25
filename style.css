@@ -125,6 +125,9 @@ body {
 }
 .card__lieu .fa-solid {
   position: absolute;
+  background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   opacity: 0;
   transition: all 1s ease-in-out;
 }
@@ -132,16 +135,13 @@ body {
   opacity: 1;
   transform: scale(1.2);
 }
-.card__lieu i {
-  color: transparent;
-  background-color: linear-gradient(#FF79DA, #9356DC);
-  background-image: linear-gradient(#FF79DA, #9356DC);
-  background-clip: text;
-}
 
 /*********PAGE RESTO***************/
+.resto {
+  background-color: #f1f1f1;
+}
+
 .restoImg {
-  padding-top: -1rem;
   box-sizing: content-box;
   background-size: cover;
   background-position: center;
@@ -154,7 +154,7 @@ body {
   font-size: 1.5rem;
   position: absolute;
   left: 3rem;
-  top: 2.3rem;
+  top: 2.8rem;
 }
 
 h6, .carte, .carte__menus {
@@ -178,18 +178,15 @@ h6, .carte, .carte__menus {
 }
 .carte__titre .fa-solid {
   position: absolute;
+  background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   opacity: 0;
   transition: all 1s ease-in-out;
 }
 .carte__titre .fa-solid:hover {
   opacity: 1;
   transform: scale(1.2);
-}
-.carte__titre i {
-  color: transparent;
-  background-color: linear-gradient(#FF79DA, #9356DC);
-  background-image: linear-gradient(#FF79DA, #9356DC);
-  background-clip: text;
 }
 .carte__titre span {
   position: absolute;
@@ -214,8 +211,58 @@ h6::after {
   display: grid;
   grid-template-columns: 1fr; /*@media repeat(3, 1fr) ; (max-width : variable.$breakpoint)*/
   gap: 1rem;
-  animation: montee 2s ease-in-out backwards;
+  animation: montee 1s ease-in-out backwards;
   overflow: hidden;
+}
+
+/*MONTEE ENTREE PLAT DESSERT*/
+.carte__menus--1 {
+  animation: montee 1s ease-in-out;
+}
+
+.carte__menus--2 {
+  animation: montee 1s 0.9s ease-in-out backwards;
+}
+
+.carte__menus--3 {
+  animation: montee 1s 1.6s ease-in-out backwards;
+}
+
+/*MONTEE DES PLATS*/
+.carte__item1--1 {
+  animation: montee 1s 0.5s ease-in-out backwards;
+}
+
+.carte__item1--2 {
+  animation: montee 1s 0.8s ease-in-out backwards;
+}
+
+.carte__item1--3 {
+  animation: montee 1s 1.1s ease-in-out backwards;
+}
+
+.carte__item1--4 {
+  animation: montee 1s 1.4s ease-in-out backwards;
+}
+
+.carte__item1--5 {
+  animation: montee 1s 1.7s ease-in-out backwards;
+}
+
+.carte__item1--6 {
+  animation: montee 1s 2s ease-in-out backwards;
+}
+
+.carte__item1--7 {
+  animation: montee 1s 2.3s ease-in-out backwards;
+}
+
+.carte__item1--8 {
+  animation: montee 1s 2.6s ease-in-out backwards;
+}
+
+.carte__item1--9 {
+  animation: montee 1s 2.9s ease-in-out backwards;
 }
 
 .carte__item1 {
@@ -226,7 +273,6 @@ h6::after {
   border-radius: 1rem;
   cursor: pointer;
   background-color: white;
-  animation: montee 3s;
   overflow: hidden;
 }
 .carte__item1:hover .icone i {
@@ -274,6 +320,14 @@ h6::after {
 }
 .icone i {
   transition: 1s;
+}
+
+.commander {
+  margin: 3rem 2rem 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
 }
 
 button {
@@ -332,7 +386,6 @@ header {
 h1 {
   font-family: "Shrikhand";
   padding: 1rem;
-  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
 }
 
 h2 {
@@ -381,5 +434,11 @@ a {
     opacity: 1;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
+@keyframes apparition {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */

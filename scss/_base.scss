@@ -111,12 +111,15 @@ body{
 
 /*********PAGE RESTO***************/
 
+.resto{
+    background-color :$color-background-secondary;
+}
 
 .restoImg {
-    padding-top: -1rem;
     box-sizing: content-box;
     background-size: cover;
     background-position: center;
+
     img{
        width:100%;
     }
@@ -126,7 +129,7 @@ body{
     font-size: 1.5rem;
     position: absolute;
     left: 3rem;
-    top: 2.3rem;
+    top: 2.8rem;
 }
 
  h6, .carte, .carte__menus{
@@ -159,10 +162,48 @@ h6{
     display: grid;
     grid-template-columns: 1fr ;/*@media repeat(3, 1fr) ; (max-width : variable.$breakpoint)*/
     gap: 1rem;
-   animation : montee 2s ease-in-out backwards;
+   animation : montee 1s ease-in-out backwards;
    overflow: hidden;
 }
+/*MONTEE ENTREE PLAT DESSERT*/ 
+.carte__menus--1{
+    animation: montee 1s ease-in-out;
+}
+.carte__menus--2{
+    animation: montee 1s 0.9s ease-in-out backwards;
+}
 
+.carte__menus--3{
+    animation: montee 1s 1.6s ease-in-out backwards;
+}
+/*MONTEE DES PLATS*/
+.carte__item1--1{
+    animation: montee 1s 0.5s ease-in-out backwards;
+}
+.carte__item1--2{
+    animation: montee 1s 0.8s ease-in-out backwards;
+}
+.carte__item1--3{
+    animation: montee 1s 1.1s ease-in-out backwards;
+}
+.carte__item1--4{
+    animation: montee 1s 1.4s ease-in-out backwards;
+}
+.carte__item1--5{
+    animation: montee 1s 1.7s ease-in-out backwards;
+}
+.carte__item1--6{
+    animation: montee 1s 2s ease-in-out backwards;
+}
+.carte__item1--7{
+    animation: montee 1s 2.3s ease-in-out backwards;
+}
+.carte__item1--8{
+    animation: montee 1s 2.6s ease-in-out backwards;
+}
+.carte__item1--9{
+    animation: montee 1s 2.9s ease-in-out backwards;
+}
 
 .carte__item1 {
     display: flex;
@@ -172,7 +213,6 @@ h6{
     border-radius:1rem;
     cursor:pointer;
     background-color:$color-background;
-    animation: montee 3s;
     overflow: hidden;
      &:hover{
         @include rotation ;
@@ -218,14 +258,8 @@ h6{
     }
 }
 
-
-
-// $color-primary:#9356DC ;
-// $color-secondary:#FF79DA ; 
-// $color-tertiary:#99E2D0 ; 
-// $color-gradient : linear-gradient(($color-secondary),($color-primary));
-// $color-background : white;
-// $color-background-footer : #353535;
-// $color-primary-text : black;
-// $color-secondary-text : white;
-// $color-background-secondary : #f1f1f1;
+.commander {
+    margin: 3rem 2rem 0 2rem;
+    @include flex-center;
+    width: auto;
+}
