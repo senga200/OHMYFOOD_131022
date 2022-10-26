@@ -2,9 +2,9 @@ button{
     @include button-style;
 }
 
-li  {display: flex;
-    justify-content: space-evenly;
-    align-items: start;
+li  {//display: flex;
+    //justify-content: space-evenly;
+    //align-items: start;
     padding: 10px;
     margin: 10px;
     height: 2.5rem;

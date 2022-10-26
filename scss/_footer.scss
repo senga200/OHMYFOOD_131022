@@ -1,6 +1,7 @@
 footer{
     background-color: #353535;
     padding: 2rem;
+
     a{
         color: $color-secondary-text;
     }
@@ -9,10 +10,30 @@ footer{
     }
 }
 
+.liensFooter{
+    @include desktop {
+        display: flex;
+        justify-content: space-around;
+    }
+    @include tablette{
+        display: flex;
+        justify-content: space-around;
+    }
+}
 
 .footer__titre {
      font-family: "Shrikhand";
      color: $color-secondary-text;
      font-size: 20px;
      padding-bottom: 0.5rem;
+     @include desktop {
+        @include flex-center;
+        font-size: 30px;
+        padding-bottom: 2rem;
+     }
+     @include tablette {
+        @include flex-center;
+        font-size: 30px;
+        padding-bottom: 2rem;
+     }
 }

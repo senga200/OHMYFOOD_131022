@@ -1,6 +1,5 @@
 header{
     text-align: center;
-
 }
 
 h1 {
@@ -10,6 +9,18 @@ h1 {
 h2{
     margin-left: 10%;
     padding-top: 2.5rem;
+    @include desktop{
+        text-align: center;
+        font-size: 35px;
+        margin-left: 0;
+        padding:4rem;
+    }
+    @include tablette {
+        text-align: center;
+        font-size: 30px;
+        margin-left: 0;
+        padding-bottom: 2rem;
+    }
 }
 
 a {
@@ -36,9 +47,25 @@ a {
     h2{
         margin:0;
     }
+    @include desktop{
+        padding: 0 0 5% 0;
+    }
 }
 
 .intro__soustitre{
     @include p;
     padding-bottom: 10%;
+    @include desktop {
+        padding: 1rem;
+    }
+}
+
+
+.intro__button{
+    @include desktop{
+        width: auto;
+    }
+    @include tablette {
+        width: auto;
+    }
 }

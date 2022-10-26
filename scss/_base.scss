@@ -1,18 +1,19 @@
-//@import "./mixins" ;
-//@import "./variables" ;
 
 body{
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+a{
+    text-decoration: none;
+    color: $color-primary-text;
 }
 
 /**************HEADER = _header.scss**************/
 
-
+/**************PAGE D ACCUEIL********************/
 .fonctionnement {
    @include flex-center;
-    margin-right:3.5rem;
-    counter-reset : steps;
-
+   margin-right:3.5rem;
+   counter-reset : steps;
 }
 
 .etape {
@@ -51,9 +52,14 @@ body{
     background-color: $color-background-secondary;
     padding-bottom: 3rem;
 }
+
 .card__resto{
     @include flex-center;
     flex-direction: column;
+    :hover{
+        background-color: lighten($color-primary, $amount: 35%) ;;
+         transition: all 0.3s ease;
+        }
 
     .new{
         position: relative;
@@ -72,6 +78,13 @@ body{
         right: 1rem;
         top: 1rem;
     }
+    @include desktop {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns:1fr 1fr;
+        grid-template-rows: auto;
+        padding-left: 8rem;
+    }
 }
 
 .card__resto--paletteDuGout,
@@ -82,22 +95,13 @@ body{
     @include p;
     @include card-resto;
     margin-bottom: 1.5rem;
-}
-
-.card__resto {
-     :hover{
-    background-color: lighten($color-primary, $amount: 35%) ;;
-     transition: all 0.3s ease;
+    @include desktop{
+        border-radius: 2rem;
+    }
+    @include tablette {
+        border-radius: 2rem;
     }
 }
-
-// .card__resto--paletteDuGout,
-// .card__resto--noteEnchantee,
-// .card__resto--alaFrancaise,
-//.card__resto--deliceDesSens{
-
-
-
 
 .card__lieu {
     margin: -1rem 3rem -1rem 1rem;
@@ -105,8 +109,6 @@ body{
     justify-content: space-between;
     @include coeur;
 }
-
-
 
 
 /*********PAGE RESTO***************/
@@ -118,10 +120,21 @@ body{
 .restoImg {
     box-sizing: content-box;
     background-size: cover;
-    background-position: center;
-
+    background-position: bottom;
+    }
     img{
        width:100%;
+       @include desktop {
+        max-width: 100%;
+        max-height: 28rem;
+        width: 100%;
+        object-fit: cover;
+    }
+    @include tablette {
+        max-width: 100%;
+        max-height: 22rem;
+        width: 100%;
+        object-fit: cover;
     }
 }
 
@@ -160,50 +173,61 @@ h6{
 
 .carte__menus{
     display: grid;
-    grid-template-columns: 1fr ;/*@media repeat(3, 1fr) ; (max-width : variable.$breakpoint)*/
+    grid-template-columns: 1fr ;
     gap: 1rem;
    animation : montee 1s ease-in-out backwards;
    overflow: hidden;
+   @include desktop {
+    grid-template-columns: 1fr 1fr 1fr;
+   }
 }
 /*MONTEE ENTREE PLAT DESSERT*/ 
 .carte__menus--1{
-    animation: montee 1s ease-in-out;
+    animation: montee 1s ease-in-out 0.2s ;
 }
 .carte__menus--2{
-    animation: montee 1s 0.9s ease-in-out backwards;
+    animation: montee 1s ease-in-out backwards 0.5s ;
 }
 
 .carte__menus--3{
-    animation: montee 1s 1.6s ease-in-out backwards;
+    animation: montee 1s  ease-in-out backwards 1.2s;
 }
 /*MONTEE DES PLATS*/
 .carte__item1--1{
-    animation: montee 1s 0.5s ease-in-out backwards;
+    animation: montee 1s ease-in-out backwards 0.5s;
 }
 .carte__item1--2{
-    animation: montee 1s 0.8s ease-in-out backwards;
+    animation: montee 1s ease-in-out backwards 0.8s;
 }
 .carte__item1--3{
-    animation: montee 1s 1.1s ease-in-out backwards;
+    animation: montee 1s ease-in-out backwards 1.1s;
 }
 .carte__item1--4{
-    animation: montee 1s 1.4s ease-in-out backwards;
+    animation: montee 1sease-in-out backwards 1.4s ;
 }
 .carte__item1--5{
-    animation: montee 1s 1.7s ease-in-out backwards;
+    animation: montee 1s ease-in-out backwards 1.7s;
 }
 .carte__item1--6{
-    animation: montee 1s 2s ease-in-out backwards;
+    animation: montee 1s ease-in-out backwards 2s;
 }
 .carte__item1--7{
-    animation: montee 1s 2.3s ease-in-out backwards;
+    animation: montee 1s ease-in-out backwards 2.3s;
 }
 .carte__item1--8{
-    animation: montee 1s 2.6s ease-in-out backwards;
+    animation: montee 1s ease-in-out backwards 2.6s;
 }
 .carte__item1--9{
-    animation: montee 1s 2.9s ease-in-out backwards;
+    animation: montee 1s ease-in-out backwards 2.9s;
 }
+.carte__item1--10{
+    animation: montee 1s ease-in-out backwards 1.3s;
+    @include desktop{
+        grid-column-start: 2;
+    }
+}
+
+
 
 .carte__item1 {
     display: flex;

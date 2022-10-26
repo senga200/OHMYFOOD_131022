@@ -20,6 +20,9 @@
 @mixin h1 {
     font-family: "Shrikhand";
     padding: 1rem;
+    @include desktop{
+        font-size: 50px;
+    }
    // box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
 }
 
@@ -109,7 +112,7 @@ img{
         border-radius:0 1rem 1rem 0;
         display: flex;
         justify-content: center;
-        align-items: center;;
+        align-items: center;
         font-size: 1.8rem;
        // transform: rotate(1.5turn);
         background-color: $color-tertiary;
@@ -133,3 +136,21 @@ img{
     // }
     
     
+
+
+    /* RESPONSIVE*/ 
+
+    @mixin desktop {
+     @media screen and (min-width:1224px)
+        {
+        @content;
+        }
+    }
+
+    @mixin tablette {
+        @media all and (min-width: 768px) and (max-width: 992px)
+        {
+            @content;
+        }
+
+    }

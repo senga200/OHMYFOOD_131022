@@ -19,11 +19,12 @@
 //     left: 0;
 //     right: 0;
 //     bottom: 0;
-//    //z-index:1;
+//    // z-index:1;
 //     background-color : whitesmoke;
 //     opacity : 0.9;
-//     animation : disparition  4s linear 3s;
-//     animation-fill-mode : forwards;
+//     animation: disparition 0.5s 4s ease-in forwards;
+
+//     //animation-fill-mode : forwards;
 //   }
 
 //   .loader{
@@ -36,8 +37,11 @@
 //     border-top-color: #FF79DA;
 //     border-bottom-color:  #99E2D0;
 //     border-radius: 50%;
-//     animation: chargeur 4s linear 3s;
+//     animation: chargeur 3s linear 1s;
 //     animation-fill-mode : forwards;
+//     transform: scale(0);
+//     transition: transform 3s;
+
 //   }
 
 //   @keyframes chargeur {
@@ -65,16 +69,17 @@
 //       border-bottom-color: #FF79DA;
 //       opacity : 0;
 //       animation-fill-mode: forwards;
+ 
 //     }
 
 //   }
 
-  @keyframes apparition {
-    from{opacity : 0 ;
-    }
-    to {opacity : 1 ;
-    }
-  }
+//   @keyframes disparition {
+//     from{opacity : 1 ;
+//     }
+//     to {opacity : 0 ;
+//     }
+//   }
 
 
 
