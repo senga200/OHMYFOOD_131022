@@ -9,6 +9,35 @@ a{
 
 /**************HEADER = _header.scss**************/
 
+
+/**************LOADER ****************************/
+.loader-container{
+    position: fixed;
+    top : 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index:1;
+    background-color : whitesmoke;
+    opacity : 0.9;
+    animation: disparition 0.3s 3s ease-in forwards;
+    transform-origin: top;
+  }
+
+  .loader{
+    margin:auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border: 16px solid #9356DC;
+    width: 120px;
+    height: 120px;
+    border-top-color: #FF79DA;
+    border-bottom-color:  #99E2D0;
+    border-radius: 50%;
+    animation: chargeur 3s linear 1s;
+    animation-fill-mode : forwards;
+  }
+
 /**************PAGE D ACCUEIL********************/
 .fonctionnement {
    @include flex-center;

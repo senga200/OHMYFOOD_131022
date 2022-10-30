@@ -11,6 +11,34 @@ a {
 }
 
 /**************HEADER = _header.scss**************/
+/**************LOADER ****************************/
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: whitesmoke;
+  opacity: 0.9;
+  animation: disparition 0.3s 3s ease-in forwards;
+  transform-origin: top;
+}
+
+.loader {
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border: 16px solid #9356DC;
+  width: 120px;
+  height: 120px;
+  border-top-color: #FF79DA;
+  border-bottom-color: #99E2D0;
+  border-radius: 50%;
+  animation: chargeur 3s linear 1s;
+  animation-fill-mode: forwards;
+}
+
 /**************PAGE D ACCUEIL********************/
 .fonctionnement {
   display: flex;
@@ -556,6 +584,7 @@ a {
   }
 }
 
+/*MENU RESTO*/
 @keyframes montee {
   0% {
     transform: translateY(-40px);
@@ -564,5 +593,43 @@ a {
   100% {
     transform: translateY(0px);
     opacity: 1;
+  }
+}
+/*LOADER*/
+@keyframes chargeur {
+  0% {
+    transform: rotate(0deg) scale(1);
+    border-top-color: #99E2D0;
+    border-bottom-color: #99E2D0;
+  }
+  25% {
+    border-top-color: #FF79DA;
+    border-bottom-color: #FF79DA;
+  }
+  50% {
+    transform: rotate(360deg) scale(1.15);
+    border-top-color: #9356DC;
+    border-bottom-color: #9356DC;
+  }
+  75% {
+    border-top-color: #99E2D0;
+    border-bottom-color: #99E2D0;
+  }
+  100% {
+    transform: rotate(720deg) scale(1);
+    border-top-color: #FF79DA;
+    border-bottom-color: #FF79DA;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes disparition {
+  from {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0);
   }
 }/*# sourceMappingURL=style.css.map */

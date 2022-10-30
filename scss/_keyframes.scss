@@ -1,3 +1,6 @@
+
+/*MENU RESTO*/
+
 @keyframes montee
 {
     0%
@@ -13,147 +16,44 @@
 }
 
 
-// .loader-container{
-//     position: fixed;
-//     top : 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//    // z-index:1;
-//     background-color : whitesmoke;
-//     opacity : 0.9;
-//     animation: disparition 0.5s 4s ease-in forwards;
+/*LOADER*/
 
-//     //animation-fill-mode : forwards;
-//   }
+  @keyframes chargeur {
+    0%{
+      transform: rotate(0deg) scale(1);
+      border-top-color:  #99E2D0;
+      border-bottom-color:  #99E2D0;
+    }
+    25%{
+      border-top-color: #FF79DA ;
+      border-bottom-color: #FF79DA ;
+    }
+    50% {
+       transform: rotate(360deg) scale(1.15);
+      border-top-color: #9356DC;
+      border-bottom-color: #9356DC;
+    }
+    75%{
+      border-top-color: #99E2D0;
+      border-bottom-color: #99E2D0;
+    }
+    100%{
+       transform: rotate(720deg) scale(1);
+      border-top-color: #FF79DA;
+      border-bottom-color: #FF79DA;
+      opacity : 0;
+      animation-fill-mode: forwards;
+    }
 
-//   .loader{
-//     margin:auto;
-//     margin-top: 100px;
-//     margin-bottom: 100px;
-//     border: 16px solid #9356DC;
-//     width: 120px;
-//     height: 120px;
-//     border-top-color: #FF79DA;
-//     border-bottom-color:  #99E2D0;
-//     border-radius: 50%;
-//     animation: chargeur 3s linear 1s;
-//     animation-fill-mode : forwards;
-//     transform: scale(0);
-//     transition: transform 3s;
+  }
 
-//   }
+  @keyframes disparition {
+    from{opacity : 0.2 ;
+      transform: scale(1);
+    }
+    to {opacity : 0 ;
+      transform: scale(0);
+    }
+  }
 
-//   @keyframes chargeur {
-//     0%{
-//       transform: rotate(0deg) scale(1);
-//       border-top-color:  #99E2D0;
-//       border-bottom-color:  #99E2D0;
-//     }
-//     25%{
-//       border-top-color: #FF79DA ;
-//       border-bottom-color: #FF79DA ;
-//     }
-//     50% {
-//        transform: rotate(360deg) scale(1.15);
-//       border-top-color: #9356DC;
-//       border-bottom-color: #9356DC;
-//     }
-//     75%{
-//       border-top-color: #99E2D0;
-//       border-bottom-color: #99E2D0;
-//     }
-//     100%{
-//        transform: rotate(720deg) scale(1);
-//       border-top-color: #FF79DA;
-//       border-bottom-color: #FF79DA;
-//       opacity : 0;
-//       animation-fill-mode: forwards;
- 
-//     }
-
-//   }
-
-//   @keyframes disparition {
-//     from{opacity : 1 ;
-//     }
-//     to {opacity : 0 ;
-//     }
-//   }
-
-
-
-
-
-
-// .loader-container{
-//     // border-radius : 5px;
-//      background-color: #fff;
-//      opacity: 0.9;
- 
-//     // display: flex;
-//   //   justify-content: center;
-//    //  align-items: center;
-//      position: fixed;
-//      top : 0;
-//      left: 0;
-//      right: 0;
-//      bottom: 0;
-//      z-index:2;
-//    }
-   
-//    .loader {
-//     // display: block;
-//     // position: relative;
-//     // width: 250px;
-//     // height: 250px;
-//    //  border-radius: 50%;
-//     // border: 7px solid transparent;
-//     // border-top-color : #9356DC;
-//      animation: fade-out 3s;
-//     // animation: spin 2s linear 3s;
-//      animation-fill-mode:fowards;
-//    }
-   
-//  //   .loader::before, .loader::after {
-//  //     content:"";
-//  //     position: absolute;
-//  //     border-radius : 50%;
-//  //     border:7px solid transparent; 
-//  //   }
-//  //   .loader::before {
-//  //     top:10px;
-//  //     left:10px;
-//  //     right:10px;
-//  //     bottom:10px;
-//  //     border-top-color : #FF79DA ;
-//  //     animation:spin 3s linear 3s;
-//  //   }
-   
-//  //   .loader::after {
-//  //     top:25px;
-//  //     left:25px;
-//  //     right:25px;
-//  //     bottom:25px;
-//  //     border-top-color : #99E2D0;
-//  //     animation:spin 1.5s linear 3s;
-   
-//  //   }
- 
-
-   
- //   @keyframes spin {
- //     0%{
- //       transform:rotate(0deg)
- //     }
- //     25%{
- //       transform:rotate(180deg)
- //     }
- //     50%{ 
- //     transform:rotate(180deg)
- //     }
- //     100%{
- //       opacity:0;
- //     }
- //   }
 
