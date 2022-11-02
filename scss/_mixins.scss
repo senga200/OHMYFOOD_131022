@@ -122,9 +122,12 @@ img{
 
 @mixin rotation {
     .icone i{
-        rotate: (-360deg);
+       transform: rotate(1turn);
 }
 }
+
+      
+    
   
 
 

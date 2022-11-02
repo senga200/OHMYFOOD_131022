@@ -323,7 +323,7 @@ h6::after {
 }
 
 .carte__item1--4 {
-  animation: montee 1sease-in-out backwards 1.4s;
+  animation: montee 1s ease-in-out backwards 1.4s;
 }
 
 .carte__item1--5 {
@@ -366,7 +366,7 @@ h6::after {
   overflow: hidden;
 }
 .carte__item1:hover .icone i {
-  rotate: -360deg;
+  transform: rotate(1turn);
 }
 
 .titres, .description1, .detail {
