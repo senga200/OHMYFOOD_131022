@@ -23,12 +23,8 @@
     @include desktop{
         font-size: 50px;
     }
-   // box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
 }
 
-// @mixin h4{
-//     font-family: "Shrikhand";
-// }
 @mixin h5{
     font-family: "Shrikhand";
     font-size: 30px;
@@ -87,7 +83,6 @@ img{
 @mixin coeur { 
     .fa-regular{
     position: absolute;  
-    //z-index: 1;
     }
 
 .fa-solid {
@@ -96,9 +91,7 @@ img{
 	-webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0;    
-    //z-index: 1;
     transition: all 1s ease-in-out;
-
 }
     .fa-solid:hover{
     opacity: 1;
@@ -106,40 +99,12 @@ img{
 }
 } 
 
-@mixin selection {
-    .carte__selection{
-        width: 6rem;
-        border-radius:0 1rem 1rem 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.8rem;
-       // transform: rotate(1.5turn);
-        background-color: $color-tertiary;
-       transform: translateX(-4rem);  
-    }
-}
-
 @mixin rotation {
     .icone i{
        transform: rotate(1turn);
+       transition : 1s;
 }
 }
-
-      
-    
-  
-
-
-
-    // @if (($color-background-footer)) {
-    //     color : $color-secondary-text;
-    // } @else {
-    //     color : $color-primary-text;
-    // }
-    
-    
-
 
     /* RESPONSIVE*/ 
 
@@ -153,7 +118,6 @@ img{
     @mixin tablette {
         @media all and (min-width: 768px) and (max-width: 992px)
         {
-            @content;
+        @content;
         }
-
     }

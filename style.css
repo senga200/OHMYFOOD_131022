@@ -30,10 +30,10 @@ a {
   margin-top: 100px;
   margin-bottom: 100px;
   border: 16px solid #9356DC;
-  width: 120px;
-  height: 120px;
   border-top-color: #FF79DA;
   border-bottom-color: #99E2D0;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   animation: chargeur 3s linear 1s;
   animation-fill-mode: forwards;
@@ -233,8 +233,17 @@ img {
   top: 2.8rem;
 }
 
-h6, .carte, .carte__menus {
-  animation: montee 2S 1s ease-in-out backwards;
+h6 {
+  font-weight: lighter;
+  font-size: 18px;
+}
+h6::after {
+  content: "";
+  display: block;
+  margin-top: 0.2rem;
+  width: 3rem;
+  height: 0.2rem;
+  background: #99E2D0;
 }
 
 .carte {
@@ -270,25 +279,10 @@ h6, .carte, .carte__menus {
   top: 2.5rem;
 }
 
-h6 {
-  font-weight: lighter;
-  font-size: 18px;
-}
-h6::after {
-  content: "";
-  display: block;
-  margin-top: 0.2rem;
-  width: 3rem;
-  height: 0.2rem;
-  background: #99E2D0;
-}
-
 .carte__menus {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  animation: montee 1s ease-in-out backwards;
-  overflow: hidden;
 }
 @media screen and (min-width: 1224px) {
   .carte__menus {
@@ -296,9 +290,14 @@ h6::after {
   }
 }
 
+/*MONTEE TITRE ET CARTE*/
+h6, .carte, .carte__menus {
+  animation: montee 2s ease-in-out backwards 0.8s;
+}
+
 /*MONTEE ENTREE PLAT DESSERT*/
 .carte__menus--1 {
-  animation: montee 1s ease-in-out 0.2s;
+  animation: montee 1s ease-in-out backwards 0.2s;
 }
 
 .carte__menus--2 {
@@ -355,6 +354,7 @@ h6::after {
   }
 }
 
+/*ROTATION DE L ICONE ET TEXTE COUPE*/
 .carte__item1 {
   display: flex;
   height: auto;
@@ -367,8 +367,10 @@ h6::after {
 }
 .carte__item1:hover .icone i {
   transform: rotate(1turn);
+  transition: 1s;
 }
 
+/*TEXTE COUPE*/
 .titres, .description1, .detail {
   margin: 0;
   height: auto;
@@ -378,6 +380,7 @@ h6::after {
   flex: 2;
 }
 
+/**/
 .prix {
   display: flex;
   justify-content: flex-end;
@@ -385,6 +388,7 @@ h6::after {
   font-weight: bold;
 }
 
+/*APPARITION DE LA DIV CONFIRMATION */
 .confirmation {
   display: flex;
   justify-content: center;
@@ -400,18 +404,7 @@ h6::after {
   margin-right: -1rem;
 }
 
-.icone {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  border-radius: 5rem;
-  transition: all 0.7s ease;
-}
-.icone i {
-  transition: 1s;
-}
-
+/**/
 .commander {
   margin: 3rem 2rem 0 2rem;
   display: flex;

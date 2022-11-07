@@ -29,10 +29,10 @@ a{
     margin-top: 100px;
     margin-bottom: 100px;
     border: 16px solid #9356DC;
-    width: 120px;
-    height: 120px;
     border-top-color: #FF79DA;
     border-bottom-color:  #99E2D0;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     animation: chargeur 3s linear 1s;
     animation-fill-mode : forwards;
@@ -151,9 +151,9 @@ a{
     background-size: cover;
     background-position: bottom;
     }
-    img{
-       width:100%;
-       @include desktop {
+img{
+    width:100%;
+    @include desktop {
         max-width: 100%;
         max-height: 28rem;
         width: 100%;
@@ -174,8 +174,8 @@ a{
     top: 2.8rem;
 }
 
- h6, .carte, .carte__menus{
-    animation: montee 2S 1s ease-in-out backwards;
+h6{
+    @include h6;
 }
 
 .carte {
@@ -196,23 +196,24 @@ a{
     }
 }
 
-h6{
-    @include h6;
-}
 
 .carte__menus{
     display: grid;
     grid-template-columns: 1fr ;
     gap: 1rem;
-   animation : montee 1s ease-in-out backwards;
-   overflow: hidden;
    @include desktop {
     grid-template-columns: 1fr 1fr 1fr;
    }
 }
+
+/*MONTEE TITRE ET CARTE*/ 
+h6, .carte, .carte__menus{
+    animation: montee 2s ease-in-out backwards 0.8s;
+}
+
 /*MONTEE ENTREE PLAT DESSERT*/ 
 .carte__menus--1{
-    animation: montee 1s ease-in-out 0.2s ;
+    animation: montee 1s ease-in-out backwards 0.2s ;
 }
 .carte__menus--2{
     animation: montee 1s ease-in-out backwards 0.5s ;
@@ -256,8 +257,7 @@ h6{
     }
 }
 
-
-
+/*ROTATION DE L ICONE ET TEXTE COUPE*/
 .carte__item1 {
     display: flex;
     height: auto;
@@ -272,14 +272,16 @@ h6{
     }
 }
 
+/*TEXTE COUPE*/
 .titres, .description1, .detail {
     margin: 0;
-   height: auto;
+    height: auto;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-   flex: 2;
+    flex: 2;
 }
+/**/
 
 .prix{
     display: flex;
@@ -288,6 +290,7 @@ h6{
     font-weight: bold;
 }
 
+/*APPARITION DE LA DIV CONFIRMATION */
 .confirmation {
     @include flex-center;
     background-color: $color-tertiary;
@@ -300,16 +303,7 @@ h6{
 .carte__item1:hover .confirmation {
     margin-right: -1rem;
 }
-
-.icone{
-    @include flex-center;
-    width:auto;
-    border-radius: 5rem;
-    transition: all 0.7s ease;
-    i{
-    transition : 1s;
-    }
-}
+/**/
 
 .commander {
     margin: 3rem 2rem 0 2rem;
